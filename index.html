@@ -1,57 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KuberaJob – Миграция и Работа за границей</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KuberaJob — миграция, визы и трудоустройство с ИИ-поддержкой</title>
+  <meta name="description" content="Помогаем с трудоустройством и миграцией в Европу, Россию и Азию: визы, документы, поиск работы. AI‑инструменты: генерация резюме, анализ вакансий, визовые чек‑листы." />
+  <link rel="icon" href="/assets/favicon.ico" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f9f9f9;
-      color: #333;
-      text-align: center;
+    :root {
+      --bg:#1f3444; --bg-soft:#243b4e; --text:#0b1a23; --muted:#5c7383; --white:#fff; --accent:#e7772c; --accent-2:#f2a365; --ok:#12b886;
+      --radius:14px;
     }
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 20px;
-    }
-    h1 { margin: 0; }
-    main { padding: 40px 20px; }
-    footer {
-      background: #2c3e50;
-      color: white;
-      padding: 10px;
-      margin-top: 30px;
-    }
-    a.button {
-      display: inline-block;
-      background: #e67e22;
-      color: white;
-      padding: 12px 20px;
-      margin-top: 20px;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    a.button:hover { background: #d35400; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;line-height:1.6;color:var(--text);background:#f7fafc}
+    header{background:var(--bg);color:var(--white);padding:28px 16px}
+    .container{max-width:1080px;margin:0 auto;padding:0 16px}
+    .brand{font-size:36px;font-weight:800;letter-spacing:.3px;text-align:center}
+    .sub{opacity:.9;text-align:center;margin-top:6px}
+    .hero{background:#fff;padding:54px 0;border-bottom:1px solid #e9eef2}
+    .hero h1{font-size:30px;margin:0 0 12px;text-align:center}
+    .hero p{max-width:900px;margin:0 auto 22px;text-align:center;color:#33454f}
+    .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+    .btn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:12px 18px;font-weight:700;cursor:pointer;box-shadow:0 6px 16px rgba(231,119,44,.3);transition:.2s}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(231,119,44,.35)}
+    section{padding:40px 0}
+    h2.section{font-size:26px;text-align:center;margin:0 0 20px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:#fff;border:1px solid #e7edf2;border-radius:var(--radius);padding:18px}
+    @media(min-width:760px){.card{grid-column:span 6}}
+    @media(min-width:1000px){.card{grid-column:span 4}}
+    .card h3{margin:4px 0 8px;font-size:18px}
+    .muted{color:var(--muted);font-size:14px}
+    .tag{display:inline-block;background:#eef6ff;border:1px solid #d4e7ff;color:#2b6cb0;padding:4px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+    .strip{background:var(--bg-soft);color:#cfe2f1;padding:14px 0;text-align:center}
+    .list{display:grid;gap:10px}
+    .faq{max-width:880px;margin:0 auto}
+    details{background:#fff;border:1px solid #e7edf2;border-radius:12px;padding:12px}
+    summary{cursor:pointer;font-weight:600}
+    footer{background:var(--bg);color:#cfe2f1;margin-top:28px}
+    footer .container{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 16px}
+    a.link{color:#0b84fe;text-decoration:none}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:#0ea5e9; color:#fff; padding:6px 10px;border-radius:999px;font-size:12px}
   </style>
 </head>
 <body>
   <header>
-    <h1>KuberaJob</h1>
-    <p>Миграция • Визы • Трудоустройство</p>
+    <div class="container">
+      <div class="brand">KuberaJob</div>
+      <div class="sub">Миграция • Визы • Трудоустройство</div>
+    </div>
   </header>
 
   <main>
-    <h2>Добро пожаловать!</h2>
-    <p>Мы помогаем с трудоустройством и миграцией в Европу, Россию и Азию.  
-    Консультации, оформление документов и сопровождение под ключ.</p>
-    <a href="contact.html" class="button">Связаться с нами</a>
+    <div class="hero">
+      <div class="container">
+        <h1>Добро пожаловать!</h1>
+        <p>Мы помогаем с трудоустройством и миграцией в Европу, Россию и Азию: подбор вакансий, оформление виз и разрешений, подготовка документов и сопровождение до трудового контракта. Используем AI‑инструменты для ускорения и прозрачности процесса.</p>
+        <div class="cta">
+          <a class="btn" href="https://t.me/kuberajob" target="_blank" rel="noopener">Связаться в Telegram</a>
+          <a class="btn" href="mailto:hello@kuberajob.com">Написать на email</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="container">
+      <h2 class="section">Наши услуги</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">Визы</span>
+          <h3>Визовая поддержка</h3>
+          <p class="muted">Чек‑листы и сбор пакета документов (шенген, нац. визы, рабочие). Запись в визовые центры, заполнение анкет, сопровождение до получения визы.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Работа</span>
+          <h3>Поиск и проверка вакансий</h3>
+          <p class="muted">Подбираем вакансии под опыт кандидата, проверяем работодателей, готовим к собеседованию. Для компаний — подбор персонала и проверка кандидатов.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Документы</span>
+          <h3>Оформление разрешений</h3>
+          <p class="muted">Разрешение на работу, приглашение, оформление контрактов, страхование, перевод и нотариальное заверение документов.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="container">
+        <span class="pill">AI‑поддержка</span>
+        <span style="margin-left:10px">Автогенерация резюме • Анализ вакансий • Визовые чек‑листы • Документ‑бот</span>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section">Что добавили из английской версии (AI)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>AI‑резюме за 60 секунд</h3>
+          <p class="muted">Загружаете текст или фото резюме — получаете аккуратный PDF/Docx на русском и английском, оптимизированный под вакансию.</p>
+        </div>
+        <div class="card">
+          <h3>Анализ вакансий</h3>
+          <p class="muted">ИИ извлекает требования, сравнивает с вашим профилем и даёт список доработок, чтобы повысить шанс оффера.</p>
+        </div>
+        <div class="card">
+          <h3>Визовые чек‑листы</h3>
+          <p class="muted">Для каждой страны — персональный список документов и сроков, напоминания и контроль статуса подачи.</p>
+        </div>
+        <div class="card">
+          <h3>Документ‑бот</h3>
+          <p class="muted">Телеграм‑бот, который собирает данные, формирует заявления, письма работодателю, приглашение и сопутствующие формы.</p>
+        </div>
+        <div class="card">
+          <h3>Проверка работодателя</h3>
+          <p class="muted">Скринит отзывы, юридические реестры и открытые источники, чтобы снизить риски для кандидата.</p>
+        </div>
+        <div class="card">
+          <h3>Личный кабинет кандидата</h3>
+          <p class="muted">Статусы этапов: вакансия → оффер → виза → перелёт → релокация. Все файлы и задачи в одном месте.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section">Кому мы помогаем</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Кандидатам</h3>
+          <ul class="list">
+            <li>Работа в отелях, туризме, производстве, логистике</li>
+            <li>Резюме/сопроводительное на RU/EN</li>
+            <li>Подготовка к интервью</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Компаниям</h3>
+          <ul class="list">
+            <li>Подбор иностранных работников</li>
+            <li>Проверка документов и соответствия</li>
+            <li>AI‑воронка откликов и автоматизация HR</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Переезд «под ключ»</h3>
+          <ul class="list">
+            <li>Маршрут визы и перелёта</li>
+            <li>Временное жильё и адаптация</li>
+            <li>Сопровождение до выхода на работу</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container faq">
+      <h2 class="section">FAQ</h2>
+      <details>
+        <summary>Сколько длится поиск работы?</summary>
+        <p class="muted">От 1 до 4 недель в зависимости от рынка и вакансии. AI‑скрининг ускоряет отклик и даёт релевантные варианты.</p>
+      </details>
+      <details>
+        <summary>Работаете с Индией, Египтом, странами СНГ?</summary>
+        <p class="muted">Да. Готовим пакеты документов и ведём коммуникацию с работодателями в ЕС, России и Азии.</p>
+      </details>
+      <details>
+        <summary>Можно ли только оформить визовые документы?</summary>
+        <p class="muted">Да. Сделаем точный список, подготовим формы и назначим запись в визовый центр.</p>
+      </details>
+    </section>
+
+    <section class="strip">
+      <div class="container">
+        Готовы начать? Напишите нам в <a class="link" href="https://t.me/kuberajob" target="_blank" rel="noopener">Telegram</a> или на <a class="link" href="mailto:hello@kuberajob.com">hello@kuberajob.com</a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Kubera LLC • Все права защищены</p>
+    <div class="container">
+      <div>© 2025 Kubera LLC • Все права защищены</div>
+      <div><a class="link" href="/privacy.html">Политика конфиденциальности</a></div>
+    </div>
   </footer>
 </body>
 </html>
+
