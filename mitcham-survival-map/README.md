@@ -103,7 +103,8 @@ mitcham-survival-map/
 - [x] Add geolocation
 - [x] Add sport, playground, post, recycling and support categories
 - [ ] Move all locations into structured JSON files
-- [ ] Add source verification dates to every location
+- [x] Recheck mapped park coordinates against official Merton Council Google Maps links
+- [ ] Add source verification dates to every non-park location
 - [ ] Add accessibility information
 - [ ] Add multilingual interface
 - [ ] Add user-submitted corrections
