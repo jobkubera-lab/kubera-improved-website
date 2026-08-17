@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0b3b36">
-  <meta name="description" content="A practical map of sports facilities, playgrounds, post offices, recycling, donations and community support in Mitcham and nearby Merton.">
-  <title>Mitcham Survival Map | Kubera Digital UK</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#123b32">
+  <meta name="description" content="Verified parks, essential local services and a digital discovery trail for Mitcham and Merton.">
+  <title>Kubera Park & Local Intelligence | Mitcham and Merton</title>
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynhYBDVSvMZbKcMZ4JpZ3aN0p8PY=" crossorigin="">
@@ -13,121 +13,62 @@
   <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
-  <a class="skip-link" href="#results">Skip to map results</a>
-
-  <header class="site-header">
-    <div class="brand-wrap">
-      <div class="brand-mark" aria-hidden="true">K</div>
-      <div>
-        <p class="eyebrow">Kubera Digital UK · Community Tool</p>
-        <h1>Mitcham Survival Map</h1>
-        <p class="tagline">Sport, play, post, recycling, donations and support — in one practical map.</p>
-      </div>
+  <a class="skip-link" href="#results">Skip to results</a>
+  <header class="hero">
+    <nav class="topbar" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Kubera Park Intelligence home"><span>K</span><b>KUBERA DIGITAL UK</b></a>
+      <div class="nav-links"><a href="#mapSection">Live map</a><a href="#method">Data method</a><a href="morden-hall-trail.html">Morden Hall trail</a></div>
+    </nav>
+    <div class="hero-copy" id="top">
+      <p class="kicker">Civic technology concept · Mitcham & Merton</p>
+      <h1>Know the park<br>before you arrive.</h1>
+      <p>One honest map for parks, facilities and useful local services. Confirmed facts show their source and date; missing information stays clearly marked.</p>
+      <div class="hero-actions"><a class="btn primary" href="#mapSection">Open the map</a><a class="btn secondary" href="morden-hall-trail.html">View Discovery Trail</a></div>
     </div>
-    <div class="header-actions">
-      <button class="button button-primary" id="locateButton" type="button">Use my location</button>
-      <button class="button button-ghost" id="resetButton" type="button">Reset view</button>
-    </div>
+    <div class="hero-stats" aria-label="Project summary"><div><b id="parkStat">19</b><span>parks catalogued</span></div><div><b>29</b><span>fixed useful places</span></div><div><b>16 Aug 2026</b><span>latest data review</span></div></div>
   </header>
 
   <main>
-    <section class="controls" aria-label="Map controls">
-      <div class="search-row">
-        <label class="search-box" for="searchInput">
-          <span aria-hidden="true">⌕</span>
-          <input id="searchInput" type="search" autocomplete="off" placeholder="Search a place, service or postcode…">
-        </label>
-        <select id="sortSelect" aria-label="Sort locations">
-          <option value="recommended">Recommended</option>
-          <option value="name">Name A–Z</option>
-          <option value="distance">Nearest first</option>
-        </select>
+    <section class="map-section" id="mapSection">
+      <div class="section-heading"><div><p class="kicker dark">Live local intelligence</p><h2>Explore Mitcham and Merton</h2></div><p>Official sources first. Community map data is shown separately and never silently upgraded to verified.</p></div>
+      <div class="controls" aria-label="Map controls">
+        <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search park, facility, service or postcode…" autocomplete="off"></label>
+        <select id="sortSelect" aria-label="Sort results"><option value="recommended">Verified first</option><option value="name">Name A–Z</option><option value="distance">Nearest first</option></select>
+        <button class="control-btn" id="locateButton" type="button">Use my location</button>
+        <button class="control-btn quiet" id="resetButton" type="button">Reset</button>
       </div>
+      <div class="filters" id="filterBar" aria-label="Filter places"></div>
 
-      <div class="filter-bar" id="filterBar" aria-label="Filter by category">
-        <button class="filter-chip active" data-filter="all" type="button">All</button>
-        <button class="filter-chip" data-filter="football" type="button">⚽ Football</button>
-        <button class="filter-chip" data-filter="basketball" type="button">🏀 Basketball</button>
-        <button class="filter-chip" data-filter="cricket" type="button">🏏 Cricket</button>
-        <button class="filter-chip" data-filter="playground" type="button">🛝 Playgrounds</button>
-        <button class="filter-chip" data-filter="post" type="button">✉️ Post</button>
-        <button class="filter-chip" data-filter="recycling" type="button">♻️ Recycling</button>
-        <button class="filter-chip" data-filter="donations" type="button">👕 Donate items</button>
-        <button class="filter-chip" data-filter="support" type="button">➕ Support</button>
-      </div>
-
-      <div class="trust-strip">
-        <span><strong>Verified:</strong> council, Post Office and British Red Cross sources</span>
-        <span><strong>Live layer:</strong> additional OpenStreetMap community locations</span>
-        <span><strong>Park locations rechecked:</strong> 16 August 2026</span>
+      <div class="workspace">
+        <aside class="results" id="results" aria-live="polite">
+          <div class="results-head"><div><p class="kicker dark">Verified directory</p><h2 id="resultsTitle">All places</h2></div><span id="resultCount">0</span></div>
+          <p class="results-note">Tap a card for full facilities, verification status and sources.</p>
+          <div class="result-list" id="resultList"></div>
+        </aside>
+        <div class="map-shell">
+          <div id="map" aria-label="Interactive map of Mitcham and Merton"></div>
+          <div class="legend"><span><i class="dot official"></i>Official / checked</span><span><i class="dot estimated"></i>Estimated coordinate</span><span><i class="dot community"></i>OpenStreetMap</span></div>
+          <div class="loading" id="loadingMessage" hidden>Loading community layer…</div>
+        </div>
       </div>
     </section>
 
-    <section class="workspace">
-      <aside class="results-panel" id="results" aria-live="polite">
-        <div class="results-heading">
-          <div>
-            <p class="eyebrow">Useful places</p>
-            <h2 id="resultsTitle">All locations</h2>
-          </div>
-          <span class="count-badge" id="resultCount">0</span>
-        </div>
-        <p class="results-note" id="resultsNote">Officially verified places are shown first. Opening hours can change, so check the source before travelling.</p>
-        <div class="result-list" id="resultList"></div>
-      </aside>
-
-      <div class="map-shell">
-        <div id="map" role="application" aria-label="Interactive map of Mitcham services"></div>
-        <div class="map-legend" aria-label="Map legend">
-          <span><i class="legend-dot verified"></i> Verified</span>
-          <span><i class="legend-dot community"></i> OpenStreetMap</span>
-          <span><i class="legend-dot user"></i> Your location</span>
-        </div>
-        <div class="loading" id="loadingMessage" hidden>Loading community locations…</div>
-      </div>
+    <section class="trail-banner" aria-label="Morden Hall Park digital trail">
+      <div><p class="kicker">Council & partner demonstration</p><h2>Morden Hall Park<br>Digital Discovery Trail</h2><p>A mobile, no-download visitor experience connecting QR markers to wildlife, heritage and short route choices.</p><a class="btn primary" href="morden-hall-trail.html">Open the trail prototype</a></div>
+      <div class="pilot-grid"><article><b>3</b><span>removable QR markers</span></article><article><b>12</b><span>week pilot concept</span></article><article><b>0</b><span>app downloads</span></article><article><b>1</b><span>clear visitor survey</span></article></div>
     </section>
 
-    <section class="information-grid" aria-label="Important information">
-      <article class="info-card emergency-card">
-        <p class="eyebrow">Support, not an invented pin</p>
-        <h2>British Red Cross — London Refugee Service</h2>
-        <p>Practical and emotional support, emergency help, casework and signposting for refugees, asylum seekers and vulnerable migrants.</p>
-        <div class="contact-lines">
-          <a href="tel:02077045670">020 7704 5670</a>
-          <a href="mailto:londonru@redcross.org.uk">londonru@redcross.org.uk</a>
-        </div>
-        <a class="text-link" href="https://www.redcross.org.uk/get-help/get-help-as-a-refugee/contact-your-local-refugee-service" target="_blank" rel="noopener">Open official service page →</a>
-      </article>
-
-      <article class="info-card">
-        <p class="eyebrow">Donate responsibly</p>
-        <h2>British Red Cross donations</h2>
-        <p>Donate clean, saleable clothes, books, toys, furniture and selected electrical goods through a Red Cross shop or send clothes by post for free.</p>
-        <a class="text-link" href="https://www.redcross.org.uk/shop/donating-items-to-our-charity-shops" target="_blank" rel="noopener">Check accepted donations →</a>
-      </article>
-
-      <article class="info-card">
-        <p class="eyebrow">Before visiting</p>
-        <h2>Recycling centre rules</h2>
-        <p>Cars normally need a booking for Garth Road. Bring proof that you live in Merton. Pedestrians and cyclists do not need a booking.</p>
-        <a class="text-link" href="https://www.merton.gov.uk/rubbish-and-recycling/garth-road" target="_blank" rel="noopener">Read official rules →</a>
-      </article>
+    <section class="method" id="method">
+      <div><p class="kicker dark">Honesty-first data</p><h2>What “verified” means here</h2></div>
+      <div class="method-grid"><article><span>01</span><h3>Source linked</h3><p>Park cards expose the council, National Trust, Post Office or community source used.</p></article><article><span>02</span><h3>Dated</h3><p>Important fields carry the date they were checked, so old information is visible.</p></article><article><span>03</span><h3>No guessing</h3><p>If toilets, benches or access are not confirmed, the interface says exactly that.</p></article></div>
+      <p class="disclaimer">Independent civic-technology prototype by Kubera Digital UK. Not an official Merton Council or National Trust service. Public deployment, branding, photography, accessibility claims and physical QR markers require written partner approval.</p>
     </section>
   </main>
 
-  <footer>
-    <div>
-      <strong>Mitcham Survival Map</strong>
-      <p>A Kubera Digital UK prototype built for residents and new arrivals.</p>
-    </div>
-    <div class="footer-links">
-      <a href="mailto:jobkubera@gmail.com">jobkubera@gmail.com</a>
-      <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>
-    </div>
-  </footer>
-
-  <noscript>This map needs JavaScript. Official source links remain available in the information cards above.</noscript>
+  <dialog id="detailsDialog"><button class="dialog-close" id="closeDialog" aria-label="Close details">×</button><div id="dialogContent"></div></dialog>
+  <footer><b>KUBERA DIGITAL UK</b><span>Park & Local Intelligence · Independent proposal prototype</span><a href="mailto:jobkubera@gmail.com">jobkubera@gmail.com</a></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="parks-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
