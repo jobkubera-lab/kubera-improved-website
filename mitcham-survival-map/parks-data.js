@@ -725,7 +725,7 @@ window.PARK_INTELLIGENCE = {
         "coordinateStatus": "VERIFIED_ON_SITE",
         "coordinateSource": "https://github.com/jobkubera-lab/kubera-improved-website/tree/main/mitcham-survival-map",
         "coordinateConfidence": "high",
-        "coordinateNote": "Coordinate carried over from Nikola's own already-published, hand-verified Mitcham Survival Map dataset.",
+        "coordinateNote": "Coordinate carried over from Nikolay's own already-published, hand-verified Mitcham Survival Map dataset.",
         "toilets": {
           "value": null,
           "status": "UNVERIFIED",
@@ -1156,7 +1156,7 @@ window.PARK_INTELLIGENCE = {
           "note": "Not stated on the official source page checked on 2026-08-16. Not confirmed on site."
         },
         "coordinateDisagreement": {
-          "value": "Postcode CR4 3LB (from the official park page) geocodes to 51.413195,-0.16208 — about 1.6km north of the on-site-verified marker used here (51.3982,-0.1639). London Road runs the length of Mitcham, so CR4 3LB likely covers a wider stretch than the park entrance itself. Shown here per Nikola's own verified on-site data; the postcode-derived point is flagged, not silently discarded.",
+          "value": "Postcode CR4 3LB (from the official park page) geocodes to 51.413195,-0.16208 — about 1.6km north of the on-site-verified marker used here (51.3982,-0.1639). London Road runs the length of Mitcham, so CR4 3LB likely covers a wider stretch than the park entrance itself. Shown here per Nikolay's own verified on-site data; the postcode-derived point is flagged, not silently discarded.",
           "status": "COMMUNITY_REPORTED",
           "sourceUrl": "https://api.postcodes.io/postcodes/CR43LB",
           "dateChecked": "2026-08-16",
