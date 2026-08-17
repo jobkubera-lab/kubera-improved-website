@@ -29,5 +29,5 @@ One mobile-first civic-technology prototype combining the original Mitcham Survi
 
 ## Author
 
-Nikola Kubera · Kubera Digital UK  
+Nikolay Kubera · Kubera Digital UK  
 jobkubera@gmail.com
