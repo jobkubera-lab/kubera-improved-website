@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1-demo",
+  "warning": "Synthetic demonstration data only. No real-time availability is claimed.",
+  "providers": [
+    {
+      "provider_id": "demo-shop-mitcham-001",
+      "name": "Demo Independent Shop",
+      "provider_type": "retailer",
+      "location": {"lat": 51.404, "lng": -0.168},
+      "source_url": null,
+      "verification_status": "demo",
+      "last_verified_at": null
+    },
+    {
+      "provider_id": "demo-community-001",
+      "name": "Demo Community Support Point",
+      "provider_type": "charity_community",
+      "location": {"lat": 51.403, "lng": -0.166},
+      "source_url": null,
+      "verification_status": "demo",
+      "last_verified_at": null
+    },
+    {
+      "provider_id": "demo-chess-001",
+      "name": "Demo Chess Club",
+      "provider_type": "club",
+      "location": {"lat": 51.405, "lng": -0.17},
+      "source_url": null,
+      "verification_status": "demo",
+      "last_verified_at": null
+    }
+  ],
+  "items": [
+    {
+      "item_id": "product-rice-5kg-demo",
+      "item_type": "product",
+      "name": "Rice 5 kg",
+      "gtin": null
+    },
+    {
+      "item_id": "coat-winter-medium-demo",
+      "item_type": "donated_item",
+      "name": "Winter coat — medium"
+    },
+    {
+      "item_id": "chess-evening-session-demo",
+      "item_type": "activity",
+      "name": "Evening chess session"
+    }
+  ],
+  "offers": [
+    {
+      "offer_id": "offer-demo-001",
+      "provider_id": "demo-shop-mitcham-001",
+      "item_id": "product-rice-5kg-demo",
+      "availability": "in_stock",
+      "quantity": 8,
+      "price": 6.99,
+      "currency": "GBP",
+      "free": false,
+      "updated_at": "2026-08-24T18:00:00Z",
+      "source_type": "provider_manual",
+      "confidence": "demo"
+    },
+    {
+      "offer_id": "offer-demo-002",
+      "provider_id": "demo-community-001",
+      "item_id": "coat-winter-medium-demo",
+      "availability": "available",
+      "quantity": 2,
+      "price": null,
+      "currency": null,
+      "free": true,
+      "updated_at": "2026-08-24T18:00:00Z",
+      "source_type": "provider_manual",
+      "confidence": "demo"
+    },
+    {
+      "offer_id": "offer-demo-003",
+      "provider_id": "demo-chess-001",
+      "item_id": "chess-evening-session-demo",
+      "availability": "available",
+      "quantity": null,
+      "price": 5.0,
+      "currency": "GBP",
+      "free": false,
+      "updated_at": "2026-08-24T18:00:00Z",
+      "source_type": "provider_manual",
+      "confidence": "demo"
+    }
+  ],
+  "freshness_policy": {
+    "principle": "Expired availability becomes unknown rather than remaining falsely live.",
+    "demo_ttl_minutes": 60
+  }
+}
