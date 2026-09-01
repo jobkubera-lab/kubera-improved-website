@@ -71,6 +71,11 @@ def find_service(query: str) -> Decision:
     )
 
 
+def predict(query: str, profile=None) -> Decision:
+    """Use exactly the same retrieval path as find_service; profile cannot override safeguards."""
+    return find_service(query)
+
+
 def _fallback(reason: str, description: str) -> Decision:
     return Decision(
         status="fallback",
