@@ -17,6 +17,34 @@ class FinderTests(unittest.TestCase):
         self.assertIn("leaking", result.matched_terms)
         self.assertTrue(result.official_url.startswith("https://www.merton.gov.uk/"))
 
+    def test_bulky_waste_match(self):
+        result = find_service("I need a bulky waste collection for a sofa")
+        self.assertEqual(result.service_id, "merton-bulky-waste")
+
+    def test_resident_parking_permit_match(self):
+        result = find_service("How do I get a resident parking permit?")
+        self.assertEqual(result.service_id, "merton-resident-parking-permit")
+
+    def test_blue_badge_match(self):
+        result = find_service("How do I apply for a Blue Badge?")
+        self.assertEqual(result.service_id, "merton-blue-badge")
+
+    def test_council_tax_payment_match(self):
+        result = find_service("I want to pay council tax")
+        self.assertEqual(result.service_id, "merton-council-tax-payment")
+
+    def test_noise_nuisance_match(self):
+        result = find_service("I need to report noise nuisance")
+        self.assertEqual(result.service_id, "merton-noise-nuisance")
+
+    def test_school_admissions_match(self):
+        result = find_service("How do I apply for a school place?")
+        self.assertEqual(result.service_id, "merton-school-admissions")
+
+    def test_road_pavement_match(self):
+        result = find_service("There is a pothole in my road")
+        self.assertEqual(result.service_id, "merton-road-pavement")
+
     def test_unknown_query_falls_back(self):
         result = find_service("Where can I learn to play violin?")
         self.assertEqual(result.status, "fallback")
