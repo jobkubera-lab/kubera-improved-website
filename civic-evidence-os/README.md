@@ -11,6 +11,7 @@ A small, explainable civic-service navigator for residents, newcomers and staff-
 5. Writes a privacy-conscious JSONL evidence record without storing the original query.
 6. Supports an optional consent-based ResidentProfile with a strict allow-list and an erase operation.
 7. Supports self-service and assisted presentation channels over the same deterministic retrieval decision.
+8. Includes a dependency-free browser demo in `web/` using the same controlled matching rules.
 
 This prototype is **not** a council service, legal adviser, eligibility checker or form-submission system.
 
@@ -37,6 +38,18 @@ Assisted output is plain text and shows service, description, official URL, reas
 
 Lookup does not submit a form. Language is not translated beyond the controlled catalogue.
 
+## Browser demo
+
+Open `web/index.html` with a simple local static server. The browser version performs the same conservative service matching and only links to reviewed official Merton sources.
+
+```bash
+cd civic-evidence-os
+python -m http.server 8000
+# then open http://localhost:8000/web/
+```
+
+CI also runs `node web/parity.test.mjs` as a smoke test across the same normal, fallback and safety cases.
+
 ## Evidence log
 
 The evidence log stores the presentation channel (`self_service` or `assisted`) and a SHA-256 hash of the query. It does not store the raw resident question or profile situation tags. An optional `profile_id` may be recorded; PII must not be added.
@@ -46,9 +59,10 @@ The evidence log stores the presentation channel (`self_service` or `assisted`) 
 ```bash
 cd civic-evidence-os
 PYTHONPATH=. python -m unittest discover -s tests -v
+node web/parity.test.mjs
 ```
 
-No external Python dependencies are required.
+No external Python or JavaScript dependencies are required.
 
 ## Trust rules
 
@@ -64,4 +78,6 @@ No external Python dependencies are required.
 
 ## Current scope
 
-The included catalogue is deliberately small and demonstrates housing repair, benefits advice, waste services and general council contact. It is a prototype and makes no claim of council approval or eligibility determination.
+The controlled catalogue contains 11 Merton service routes: housing repairs, benefits advice, litter/street cleaning, bulky waste, resident parking permits, Blue Badge guidance, Council Tax payment, noise/nuisance, school admissions, road/pavement problems and general council contact. New service links added on 3 September 2026 were checked against official `merton.gov.uk` pages.
+
+This remains a prototype and makes no claim of council approval or eligibility determination.
