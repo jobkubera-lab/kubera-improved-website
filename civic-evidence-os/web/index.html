@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KUBERA Civic Evidence OS — Merton service finder</title>
+  <meta name="description" content="Evidence-backed Merton service finder using a reviewed official-source catalogue.">
+  <style>
+    body{font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px;line-height:1.5;background:#f7f7f7;color:#151515}
+    main{background:#fff;border:1px solid #ddd;border-radius:16px;padding:24px}
+    h1{margin-top:0} label{display:block;font-weight:700;margin-bottom:8px}
+    textarea{width:100%;box-sizing:border-box;min-height:110px;padding:12px;font:inherit;border:1px solid #aaa;border-radius:10px}
+    button{margin-top:12px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer}
+    #result{margin-top:24px;padding-top:20px;border-top:1px solid #ddd}
+    .note{font-size:.92rem;color:#555}
+  </style>
+</head>
+<body>
+<main>
+  <p><strong>KUBERA Civic Evidence OS</strong></p>
+  <h1>Find the right Merton Council service</h1>
+  <p>Describe a practical local-service problem. This demo matches only against a small reviewed catalogue and links to the official source.</p>
+  <form id="finder-form">
+    <label for="query">What do you need help with?</label>
+    <textarea id="query" required placeholder="Example: I need to report a pothole in my road"></textarea>
+    <button type="submit">Find official service</button>
+  </form>
+  <section id="result" aria-live="polite"></section>
+  <p class="note">This is a service-navigation prototype, not an official council decision. It does not determine eligibility and does not impersonate Merton Council.</p>
+</main>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
