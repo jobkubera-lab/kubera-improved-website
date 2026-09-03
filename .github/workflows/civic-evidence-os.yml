@@ -27,3 +27,5 @@ jobs:
           python-version: "3.12"
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
+      - name: Run browser finder parity smoke test
+        run: node web/parity.test.mjs
