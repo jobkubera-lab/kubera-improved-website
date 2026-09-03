@@ -50,6 +50,19 @@ python -m http.server 8000
 
 CI also runs `node web/parity.test.mjs` as a smoke test across the same normal, fallback and safety cases.
 
+## Examples and technical note
+
+Executable examples:
+
+- [`examples/01_basic_lookup.py`](examples/01_basic_lookup.py)
+- [`examples/02_with_profile.py`](examples/02_with_profile.py)
+- [`examples/03_evidence_trail.py`](examples/03_evidence_trail.py)
+- [`examples/README.md`](examples/README.md)
+
+Technical write-up:
+
+- [`docs/BLOG_CIVIC_EVIDENCE_OS.md`](docs/BLOG_CIVIC_EVIDENCE_OS.md)
+
 ## Evidence log
 
 The evidence log stores the presentation channel (`self_service` or `assisted`) and a SHA-256 hash of the query. It does not store the raw resident question or profile situation tags. An optional `profile_id` may be recorded; PII must not be added.

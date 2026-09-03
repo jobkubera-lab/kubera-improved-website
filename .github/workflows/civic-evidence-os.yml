@@ -27,5 +27,10 @@ jobs:
           python-version: "3.12"
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
+      - name: Run executable examples
+        run: |
+          PYTHONPATH=. python examples/01_basic_lookup.py
+          PYTHONPATH=. python examples/02_with_profile.py
+          PYTHONPATH=. python examples/03_evidence_trail.py
       - name: Run browser finder parity smoke test
         run: node web/parity.test.mjs
